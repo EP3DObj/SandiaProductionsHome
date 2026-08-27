@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import getStarfield from './getStarfield.js';
 import { getFresnelMat } from './getFresnelMat.js';
 import { isMobileOrTablet } from '@/shared/devices';
+import { resolvePublicPath } from '@/offscreen/utils/publicPath';
 
 export async function initSecondScene(containerId = 'app2') {
 
@@ -52,7 +53,7 @@ export async function initSecondScene(containerId = 'app2') {
 	const mesh = new THREE.Mesh(
 		new THREE.IcosahedronGeometry(1, 12),
 		new THREE.MeshStandardMaterial({ 
-			map: colorLoader.load('public/Assets/earthmap1k.jpg'),
+			map: colorLoader.load( resolvePublicPath( 'Assets/earthmap1k.jpg' ) ),
 		})
 	);
 	earthSpin.add(mesh);
@@ -60,7 +61,7 @@ export async function initSecondScene(containerId = 'app2') {
 	const lightMesh = new THREE.Mesh(
 		new THREE.IcosahedronGeometry(1, 12),
 		new THREE.MeshStandardMaterial({ 
-			map: lightLoader.load('public/Assets/earthlights1k.jpg'),
+			map: lightLoader.load( resolvePublicPath( 'Assets/earthlights1k.jpg' ) ),
 		    blending: THREE.AdditiveBlending,
 			depthWrite: false,
 		})
@@ -71,7 +72,7 @@ export async function initSecondScene(containerId = 'app2') {
 	const cloudMesh = new THREE.Mesh(
 		new THREE.IcosahedronGeometry(1, 12),
 		new THREE.MeshStandardMaterial({ 
-			map: cloudLoader.load('public/Assets/earthcloudmaptrans.jpg'),
+			map: cloudLoader.load( resolvePublicPath( 'Assets/earthcloudmaptrans.jpg' ) ),
 		    blending: THREE.AdditiveBlending,
 			depthWrite: false,
 		})
@@ -186,7 +187,7 @@ export async function initSecondScene(containerId = 'app2') {
 	const loader = new GLTFLoader();
 	let mixer = null;
 	const clock = new THREE.Clock();
-	loader.load('/Assets/RicketShip.glb', (gltf) => {
+	loader.load( resolvePublicPath( 'Assets/RicketShip.glb' ), (gltf) => {
 		gltf.scene.scale.set(0.5, 0.5, 0.5);
 		scene.add(gltf.scene);
 		if (gltf.animations.length) {

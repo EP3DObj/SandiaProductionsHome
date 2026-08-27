@@ -5,6 +5,7 @@ import { scene } from '@/offscreen/main';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { store } from '@/offscreen/store';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { resolvePublicPath } from '@/offscreen/utils/publicPath';
 
 export class Demo extends component( THREE.Object3D, {
 	raf: {
@@ -19,64 +20,64 @@ export class Demo extends component( THREE.Object3D, {
 		this._raycaster = new THREE.Raycaster();
 
 		const gal1Loader = new GLTFLoader();
-		gal1Loader.load( '/Assets/Gallery1.glb', ( gal1 ) => {
+		gal1Loader.load( resolvePublicPath( 'Assets/Gallery1.glb' ), ( gal1 ) => {
 
 			this.add( gal1.scene );
 			this.registerGalleryLink( gal1.scene, 'https://www.refractstudio.net/mwvegas' );
-			this.applyVideoTextureToObject( gal1.scene, '/Assets/Orange.mp4' );
+			this.applyVideoTextureToObject( gal1.scene, resolvePublicPath( 'Assets/Orange.mp4' ) );
 
 		} );
 		const gal1text = new GLTFLoader();
-		gal1text.load( '/Assets/Text.glb', ( gal1text ) => {
+		gal1text.load( resolvePublicPath( 'Assets/Text.glb' ), ( gal1text ) => {
 			this.add( gal1text.scene );
 		} );
 		const gal2Loader = new GLTFLoader();
-		gal2Loader.load( '/Assets/Gallery2.glb', ( gal2 ) => {
+		gal2Loader.load( resolvePublicPath( 'Assets/Gallery2.glb' ), ( gal2 ) => {
 
 			this.add( gal2.scene );
 			this.registerGalleryLink( gal2.scene, 'https://www.refractstudio.net/mwportals' );
-			this.applyVideoTextureToObject( gal2.scene, '/Assets/Portals.mp4' );
+			this.applyVideoTextureToObject( gal2.scene, resolvePublicPath( 'Assets/Portals.mp4' ) );
 		} );
 		const gal3Loader = new GLTFLoader();
-		gal3Loader.load( '/Assets/Gallery3.glb', ( gal3 ) => {
+		gal3Loader.load( resolvePublicPath( 'Assets/Gallery3.glb' ), ( gal3 ) => {
 
 			this.add( gal3.scene );
 			this.registerGalleryLink( gal3.scene, 'https://www.route66remixed.com/tour?location=lets-not-forget-albuquerque-is-a-character-too' );
-			this.applyVideoTextureToObject( gal3.scene, '/Assets/cinimatest.mp4' );
+			this.applyVideoTextureToObject( gal3.scene, resolvePublicPath( 'Assets/cinimatest.mp4' ) );
 		} );
 		const gal4Loader = new GLTFLoader();
-		gal4Loader.load( '/Assets/Gallery4.glb', ( gal4 ) => {
+		gal4Loader.load( resolvePublicPath( 'Assets/Gallery4.glb' ), ( gal4 ) => {
 
 			this.add( gal4.scene );
 			this.registerGalleryLink( gal4.scene, 'https://www.route66remixed.com/tour?location=the-old-road---el-viejo-camino' );
-			this.applyVideoTextureToObject( gal4.scene, '/Assets/Dancer.mp4' );
+			this.applyVideoTextureToObject( gal4.scene, resolvePublicPath( 'Assets/Dancer.mp4' ) );
 		} );
 		const gal5Loader = new GLTFLoader();
-		gal5Loader.load( '/Assets/Gallery5.glb', ( gal5 ) => {
+		gal5Loader.load( resolvePublicPath( 'Assets/Gallery5.glb' ), ( gal5 ) => {
 
 			this.add( gal5.scene );
 			this.registerGalleryLink( gal5.scene, 'https://avap-cmd.github.io/RefractProteinWebApp/' );
-			this.applyVideoTextureToObject( gal5.scene, '/Assets/Protien Vis.mp4' );
+			this.applyVideoTextureToObject( gal5.scene, resolvePublicPath( 'Assets/Protien Vis.mp4' ) );
 		} );
 		const gal6Loader = new GLTFLoader();
-		gal6Loader.load( '/Assets/Gallery6.glb', ( gal6 ) => {
+		gal6Loader.load( resolvePublicPath( 'Assets/Gallery6.glb' ), ( gal6 ) => {
 
 			this.add( gal6.scene );
 			this.registerGalleryLink( gal6.scene, 'https://www.youtube.com/watch?v=wSC3FplLdz0' );
-			this.applyVideoTextureToObject( gal6.scene, '/Assets/ueenv.mp4' );
+			this.applyVideoTextureToObject( gal6.scene, resolvePublicPath( 'Assets/ueenv.mp4' ) );
 		} );
 		const gal7Loader = new GLTFLoader();
-		gal7Loader.load( '/Assets/Gallery7.glb', ( gal7 ) => {
-			
+		gal7Loader.load( resolvePublicPath( 'Assets/Gallery7.glb' ), ( gal7 ) => {
+
 			this.add( gal7.scene );
-			this.applyVideoTextureToObject( gal7.scene, '/Assets/arch.mp4' );
+			this.applyVideoTextureToObject( gal7.scene, resolvePublicPath( 'Assets/arch.mp4' ) );
 		} );
 		const gal8Loader = new GLTFLoader();
-		gal8Loader.load( '/Assets/Gallery8.glb', ( gal8 ) => {
+		gal8Loader.load( resolvePublicPath( 'Assets/Gallery8.glb' ), ( gal8 ) => {
 
 			this.add( gal8.scene );
 			this.registerGalleryLink( gal8.scene, 'https://www.youtube.com/watch?v=NPFdrMhuLjk' );
-			this.applyVideoTextureToObject( gal8.scene, '/Assets/jetpack.mp4' );
+			this.applyVideoTextureToObject( gal8.scene, resolvePublicPath( 'Assets/jetpack.mp4' ) );
 		} );
 
 		// Lighting
