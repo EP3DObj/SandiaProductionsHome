@@ -36,6 +36,9 @@ export default defineConfig( {
 		dedupe: [ 'three' ],
 	},
 	build: {
+		// Keep Vite bundles out of public/Assets — on Windows those folders
+		// collide (case-insensitive), then GitHub Pages 404s /assets/*.js
+		assetsDir: 'js',
 		target: 'esnext',
 		// Disable minification to prevent breaking Three.js TSL
 		minify: false,
