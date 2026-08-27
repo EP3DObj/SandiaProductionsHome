@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { URL } from 'node:url';
 
 export default defineConfig( {
+	base: '/SandiaProductionsHome/',
 	server: {
 		port: 4000,
 		headers: {
