@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["js/renderer-BcClZMQs.js","js/pointer-B6JsUHZO.js","js/raf-B5Kw0sh_.js","js/StatsGLNode-bhhO6qZf.js","js/site-DKYzNuX_.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["js/renderer-BDN2FLBT.js","js/pointer-0i-MCJ4q.js","js/raf-C22adq8F.js","js/StatsGLNode-Dpu-NVHu.js","js/site-BqJSFf8t.js"])))=>i.map(i=>d[i]);
 true              &&(function polyfill() {
 	const relList = document.createElement("link").relList;
 	if (relList && relList.supports && relList.supports("modulepreload")) return;
@@ -133539,8 +133539,8 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 
 				try {
 
-					const { default: Renderer } = await __vitePreload(async () => { const { default: Renderer } = await import( './renderer-BcClZMQs.js' );return { default: Renderer }},true              ?__vite__mapDeps([0,1,2,3]):void 0);
-					const { default: Site } = await __vitePreload(async () => { const { default: Site } = await import( './site-DKYzNuX_.js' );return { default: Site }},true              ?__vite__mapDeps([4,1,2]):void 0);
+					const { default: Renderer } = await __vitePreload(async () => { const { default: Renderer } = await import( './renderer-BDN2FLBT.js' );return { default: Renderer }},true              ?__vite__mapDeps([0,1,2,3]):void 0);
+					const { default: Site } = await __vitePreload(async () => { const { default: Site } = await import( './site-BqJSFf8t.js' );return { default: Site }},true              ?__vite__mapDeps([4,1,2]):void 0);
 					const gl = new Renderer( {
 						canvas,
 						isWebGPU: Boolean( isWebGPU ),
@@ -133566,7 +133566,7 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 						store.stats = stats;
 
 						// Initialize texture captures for StatsGLNode
-						const { initStatsCaptures } = await __vitePreload(async () => { const { initStatsCaptures } = await import( './raf-B5Kw0sh_.js' );return { initStatsCaptures }},true              ?[]:void 0);
+						const { initStatsCaptures } = await __vitePreload(async () => { const { initStatsCaptures } = await import( './raf-C22adq8F.js' );return { initStatsCaptures }},true              ?[]:void 0);
 						await initStatsCaptures();
 
 					}
@@ -138770,7 +138770,7 @@ async function initSecondScene(containerId = 'app2') {
 	scene.add(stars);
 
 	const canvas = renderer.domElement;
-	canvas.style.touchAction = 'none';
+	canvas.style.touchAction = 'pan-y';
 	const raycaster = new Raycaster();
 	const pointer = new Vector2();
 	let isDragging = false;
@@ -138815,6 +138815,8 @@ async function initSecondScene(containerId = 'app2') {
 
 		if ( ! hitsPlanet( event ) ) return;
 		isDragging = true;
+		canvas.style.touchAction = 'none';
+		if ( event.cancelable ) event.preventDefault();
 		prevX = clientX( event );
 		clientY( event );
 		if ( event.pointerId != null ) {
@@ -138840,6 +138842,7 @@ async function initSecondScene(containerId = 'app2') {
 	function onDragEnd( event ) {
 
 		isDragging = false;
+		canvas.style.touchAction = 'pan-y';
 		if ( event.pointerId != null ) {
 
 			try {
