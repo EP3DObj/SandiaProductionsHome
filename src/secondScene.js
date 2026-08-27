@@ -92,7 +92,7 @@ export async function initSecondScene(containerId = 'app2') {
 	scene.add(stars);
 
 	const canvas = renderer.domElement;
-	canvas.style.touchAction = 'none';
+	canvas.style.touchAction = 'pan-y';
 	const raycaster = new THREE.Raycaster();
 	const pointer = new THREE.Vector2();
 	let isDragging = false;
@@ -138,6 +138,8 @@ export async function initSecondScene(containerId = 'app2') {
 
 		if ( ! hitsPlanet( event ) ) return;
 		isDragging = true;
+		canvas.style.touchAction = 'none';
+		if ( event.cancelable ) event.preventDefault();
 		prevX = clientX( event );
 		prevY = clientY( event );
 		if ( event.pointerId != null ) {
@@ -163,6 +165,7 @@ export async function initSecondScene(containerId = 'app2') {
 	function onDragEnd( event ) {
 
 		isDragging = false;
+		canvas.style.touchAction = 'pan-y';
 		if ( event.pointerId != null ) {
 
 			try {
