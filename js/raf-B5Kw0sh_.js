@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/StatsGLNode-5DfnYyeK.js","assets/index-CivRBAuV.js"])))=>i.map(i=>d[i]);
-import { bu as __vitePreload, d as dispatcherSingleton, s as store, bv as engine } from './index-CivRBAuV.js';
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["js/StatsGLNode-bhhO6qZf.js","js/index-DLTYy3GB.js"])))=>i.map(i=>d[i]);
+import { bu as __vitePreload, d as dispatcherSingleton, s as store, bv as engine } from './index-DLTYy3GB.js';
 
 let flushCaptures = null;
 const createdPanels = new Set();
@@ -7,7 +7,7 @@ const createdPanels = new Set();
 // Dynamically import flushCaptures when stats is enabled
 async function initStatsCaptures() {
 
-	const { flushCaptures: fc } = await __vitePreload(async () => { const { flushCaptures: fc } = await import( './StatsGLNode-5DfnYyeK.js' );return { flushCaptures: fc }},true              ?__vite__mapDeps([0,1]):void 0);
+	const { flushCaptures: fc } = await __vitePreload(async () => { const { flushCaptures: fc } = await import( './StatsGLNode-bhhO6qZf.js' );return { flushCaptures: fc }},true              ?__vite__mapDeps([0,1]):void 0);
 	flushCaptures = fc;
 
 }

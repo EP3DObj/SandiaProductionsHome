@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/renderer-CQB94c5y.js","assets/pointer-DZdKXALW.js","assets/raf-BRYDw8Fj.js","assets/StatsGLNode-5DfnYyeK.js","assets/site-DiDzSb-s.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["js/renderer-BcClZMQs.js","js/pointer-B6JsUHZO.js","js/raf-B5Kw0sh_.js","js/StatsGLNode-bhhO6qZf.js","js/site-DKYzNuX_.js"])))=>i.map(i=>d[i]);
 true              &&(function polyfill() {
 	const relList = document.createElement("link").relList;
 	if (relList && relList.supports && relList.supports("modulepreload")) return;
@@ -125072,7 +125072,7 @@ async function setupRecording( { context, api, options = {} } ) {
 
 	dispatcherSingleton.on( 'loadEnd', async () => {
 
-		const { Recorder, RecorderStatus, Encoders } = await __vitePreload(async () => { const { Recorder, RecorderStatus, Encoders } = await import( './index-Cc_mdKU7.js' );return { Recorder, RecorderStatus, Encoders }},true              ?[]:void 0);
+		const { Recorder, RecorderStatus, Encoders } = await __vitePreload(async () => { const { Recorder, RecorderStatus, Encoders } = await import( './index-pPavcw-t.js' );return { Recorder, RecorderStatus, Encoders }},true              ?[]:void 0);
 
 		canvasRecorder = new Recorder( context, {
 			name: `canvas-record-example-${CONFIG.encoder || 'default'}`,
@@ -133424,7 +133424,7 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 		if ( offscreen && 'transferControlToOffscreen' in canvas ) {
 
 			const worker = new Worker(
-				new URL(/* @vite-ignore */ "/SandiaProductionsHome/assets/offscreen-DhIfLJdZ.js", import.meta.url),
+				new URL(/* @vite-ignore */ "/SandiaProductionsHome/js/offscreen-DhIfLJdZ.js", import.meta.url),
 				{
 					type: 'module',
 				}
@@ -133539,8 +133539,8 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 
 				try {
 
-					const { default: Renderer } = await __vitePreload(async () => { const { default: Renderer } = await import( './renderer-CQB94c5y.js' );return { default: Renderer }},true              ?__vite__mapDeps([0,1,2,3]):void 0);
-					const { default: Site } = await __vitePreload(async () => { const { default: Site } = await import( './site-DiDzSb-s.js' );return { default: Site }},true              ?__vite__mapDeps([4,1,2]):void 0);
+					const { default: Renderer } = await __vitePreload(async () => { const { default: Renderer } = await import( './renderer-BcClZMQs.js' );return { default: Renderer }},true              ?__vite__mapDeps([0,1,2,3]):void 0);
+					const { default: Site } = await __vitePreload(async () => { const { default: Site } = await import( './site-DKYzNuX_.js' );return { default: Site }},true              ?__vite__mapDeps([4,1,2]):void 0);
 					const gl = new Renderer( {
 						canvas,
 						isWebGPU: Boolean( isWebGPU ),
@@ -133566,7 +133566,7 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 						store.stats = stats;
 
 						// Initialize texture captures for StatsGLNode
-						const { initStatsCaptures } = await __vitePreload(async () => { const { initStatsCaptures } = await import( './raf-BRYDw8Fj.js' );return { initStatsCaptures }},true              ?[]:void 0);
+						const { initStatsCaptures } = await __vitePreload(async () => { const { initStatsCaptures } = await import( './raf-B5Kw0sh_.js' );return { initStatsCaptures }},true              ?[]:void 0);
 						await initStatsCaptures();
 
 					}
