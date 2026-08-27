@@ -1,6 +1,6 @@
-import { c as component, s as scene, v as virtualElement } from './pointer-AwCFRWz7.js';
-import { d as dispatcherSingleton, s as store, O as OrthographicCamera, L as Loader$1, F as FileLoader, S as SRGBColorSpace, a as LinearSRGBColorSpace, b as BufferGeometry, c as BufferAttribute, I as InterleavedBuffer, C as Color, e as ColorManagement, f as InterleavedBufferAttribute, g as CompressedCubeTexture, h as CompressedArrayTexture, i as CompressedTexture, j as LinearFilter, k as LinearMipmapLinearFilter, N as NoColorSpace, R as RGBA_PVRTC_2BPPV1_Format, l as RGBA_PVRTC_4BPPV1_Format, m as RGBA_BPTC_Format, n as RED_GREEN_RGTC2_Format, o as SIGNED_RED_GREEN_RGTC2_Format, q as RED_RGTC1_Format, t as SIGNED_RED_RGTC1_Format, u as RGBA_S3TC_DXT3_Format, v as RGB_S3TC_DXT1_Format, w as RGBA_S3TC_DXT1_Format, x as RGBA_ASTC_6x6_Format, y as RGBA_ASTC_4x4_Format, z as SIGNED_RG11_EAC_Format, D as RG11_EAC_Format, E as SIGNED_R11_EAC_Format, G as R11_EAC_Format, H as RGB_ETC2_Format, J as RGBA_ETC2_EAC_Format, K as RGBFormat, M as RedFormat, Q as RGFormat, T as RGBAFormat, U as UnsignedByteType, V as HalfFloatType, X as UnsignedInt101111Type, Y as UnsignedInt5999Type, Z as FloatType, _ as DataTexture, $ as Data3DTexture, a0 as NearestMipmapNearestFilter, a1 as NearestFilter, a2 as RGB_PVRTC_4BPPV1_Format, a3 as RGB_ETC1_Format, a4 as RGBA_S3TC_DXT5_Format, a5 as RGB_BPTC_UNSIGNED_Format, a6 as DataTextureLoader, a7 as DataUtils, a8 as InstancedBufferGeometry, a9 as Sphere, aa as Box3, ab as InstancedBufferAttribute, ac as PlaneGeometry, ad as Fn, ae as vec4, af as float, ag as clamp, ah as normalLocal, ai as vec2, aj as mix, ak as positionLocal, al as vec3, am as mod, an as floor, ao as varyingProperty, ap as CanvasTexture, aq as nodeProxy, ar as Node, as as attribute, at as subBuild, au as max$1, av as sub, aw as pow, ax as select, ay as length, az as fwidth, aA as div, aB as smoothstep, aC as diffuseColor, aD as If, aE as Mesh, aF as MeshBasicNodeMaterial, aG as DoubleSide, aH as uniform, aI as Vector2, aJ as Matrix3, aK as Vector4, aL as texture, aM as modelWorldMatrix, aN as cameraPosition, aO as cameraProjectionMatrix, aP as cameraViewMatrix, aQ as modelViewMatrix, aR as screenSize, aS as cameraViewport, aT as Vector3, aU as Matrix4, aV as Curve, aW as CubicBezierCurve3, aX as CurvePath, aY as CatmullRomCurve3, aZ as LineBasicMaterial, a_ as Line, a$ as Quaternion, b0 as Euler, b1 as CubeTexture, b2 as GLTFLoader, b3 as Texture, b4 as ImageBitmapLoader, b5 as TextureLoader, b6 as Scene, b7 as BoxGeometry, b8 as MeshStandardMaterial, b9 as BackSide, ba as PointLight, bb as InstancedMesh, bc as Object3D, bd as MeshLambertMaterial, be as Raycaster, bf as DirectionalLight, bg as AmbientLight, bh as VideoTexture, bi as PMREMGenerator } from './index-CcBWWCnr.js';
-import { raf } from './raf-B9UXIpP4.js';
+import { c as component, s as scene, v as virtualElement } from './pointer-DZdKXALW.js';
+import { d as dispatcherSingleton, s as store, O as OrthographicCamera, L as Loader$1, F as FileLoader, S as SRGBColorSpace, a as LinearSRGBColorSpace, b as BufferGeometry, c as BufferAttribute, I as InterleavedBuffer, C as Color, e as ColorManagement, f as InterleavedBufferAttribute, g as CompressedCubeTexture, h as CompressedArrayTexture, i as CompressedTexture, j as LinearFilter, k as LinearMipmapLinearFilter, N as NoColorSpace, R as RGBA_PVRTC_2BPPV1_Format, l as RGBA_PVRTC_4BPPV1_Format, m as RGBA_BPTC_Format, n as RED_GREEN_RGTC2_Format, o as SIGNED_RED_GREEN_RGTC2_Format, q as RED_RGTC1_Format, t as SIGNED_RED_RGTC1_Format, u as RGBA_S3TC_DXT3_Format, v as RGB_S3TC_DXT1_Format, w as RGBA_S3TC_DXT1_Format, x as RGBA_ASTC_6x6_Format, y as RGBA_ASTC_4x4_Format, z as SIGNED_RG11_EAC_Format, D as RG11_EAC_Format, E as SIGNED_R11_EAC_Format, G as R11_EAC_Format, H as RGB_ETC2_Format, J as RGBA_ETC2_EAC_Format, K as RGBFormat, M as RedFormat, Q as RGFormat, T as RGBAFormat, U as UnsignedByteType, V as HalfFloatType, X as UnsignedInt101111Type, Y as UnsignedInt5999Type, Z as FloatType, _ as DataTexture, $ as Data3DTexture, a0 as NearestMipmapNearestFilter, a1 as NearestFilter, a2 as RGB_PVRTC_4BPPV1_Format, a3 as RGB_ETC1_Format, a4 as RGBA_S3TC_DXT5_Format, a5 as RGB_BPTC_UNSIGNED_Format, a6 as DataTextureLoader, a7 as DataUtils, a8 as InstancedBufferGeometry, a9 as Sphere, aa as Box3, ab as InstancedBufferAttribute, ac as PlaneGeometry, ad as Fn, ae as vec4, af as float, ag as clamp, ah as normalLocal, ai as vec2, aj as mix, ak as positionLocal, al as vec3, am as mod, an as floor, ao as varyingProperty, ap as CanvasTexture, aq as nodeProxy, ar as Node, as as attribute, at as subBuild, au as max$1, av as sub, aw as pow, ax as select, ay as length, az as fwidth, aA as div, aB as smoothstep, aC as diffuseColor, aD as If, aE as Mesh, aF as MeshBasicNodeMaterial, aG as DoubleSide, aH as uniform, aI as Vector2, aJ as Matrix3, aK as Vector4, aL as texture, aM as modelWorldMatrix, aN as cameraPosition, aO as cameraProjectionMatrix, aP as cameraViewMatrix, aQ as modelViewMatrix, aR as screenSize, aS as cameraViewport, aT as Vector3, aU as Matrix4, aV as Curve, aW as CubicBezierCurve3, aX as CurvePath, aY as CatmullRomCurve3, aZ as LineBasicMaterial, a_ as Line, a$ as Quaternion, b0 as Euler, b1 as CubeTexture, b2 as GLTFLoader, b3 as Texture, b4 as resolvePublicPath, b5 as ImageBitmapLoader, b6 as TextureLoader, b7 as Scene, b8 as BoxGeometry, b9 as MeshStandardMaterial, ba as BackSide, bb as PointLight, bc as InstancedMesh, bd as Object3D, be as MeshLambertMaterial, bf as Raycaster, bg as DirectionalLight, bh as AmbientLight, bi as VideoTexture, bj as PMREMGenerator } from './index-CivRBAuV.js';
+import { raf } from './raf-BRYDw8Fj.js';
 
 // Get GPU/WebGL info
 
@@ -6041,17 +6041,6 @@ const RESOURCES = [
 	// }
 ];
 
-const baseFromEnv = typeof import.meta !== "undefined" && "/SandiaProductionsHome/" ? "/SandiaProductionsHome/" : "/";
-const normalizedBase = baseFromEnv.endsWith("/") ? baseFromEnv.slice(0, -1) : baseFromEnv;
-function resolvePublicPath(target = "") {
-  const trimmed = target.replace(/^\//, "");
-  const prefix = normalizedBase || "";
-  if (!trimmed) {
-    return prefix || "/";
-  }
-  return `${prefix}/${trimmed}`;
-}
-
 var h={};function B(o){let t=h[o];return t||(t=h[o]=new PlaneGeometry(1,1,o,o).translate(.5,.5,0)),t}var a="aThreeBlocksGlyphBounds",u$1="aThreeBlocksGlyphIndex",l="aThreeBlocksGlyphColor",f="aThreeBlocksGlyphLetterIndex",d=class extends InstancedBufferGeometry{constructor(){super(),this.detail=1,this.groups=[{start:0,count:1/0,materialIndex:0},{start:0,count:1/0,materialIndex:1}],this.boundingSphere=new Sphere,this.boundingBox=new Box3,this.setAttribute(a,new InstancedBufferAttribute(new Float32Array(0),4)),this.setAttribute(u$1,new InstancedBufferAttribute(new Float32Array(0),1)),this.setAttribute(l,new InstancedBufferAttribute(new Float32Array(0),3)),this.setAttribute(f,new InstancedBufferAttribute(new Float32Array(0),1));}computeBoundingSphere(){}computeBoundingBox(){}set detail(t){if(t!==this._detail){this._detail=t,(typeof t!="number"||t<1)&&(t=1);let e=B(t);["position","normal","uv"].forEach(n=>{this.attributes[n]=e.attributes[n].clone();}),this.setIndex(e.getIndex().clone());}}get detail(){return this._detail}updateGlyphs(t,e,n,s,i){this.updateAttributeData(a,t,4),this.updateAttributeData(u$1,e,1),this.updateAttributeData(l,i,3),this._blockBounds=n,this._chunkedBounds=s,this.instanceCount=e.length,this._updateBounds();}_updateBounds(){let t=this._blockBounds;if(t){let{boundingBox:e}=this;e.min.set(t[0],t[1],0),e.max.set(t[2],t[3],0),e.getBoundingSphere(this.boundingSphere);}}applyClipRect(t){let e=this.getAttribute(u$1).count,n=this._chunkedBounds;if(n)for(let s=n.length;s--;){e=n[s].end;let i=n[s].rect;if(i[1]<t.w&&i[3]>t.y&&i[0]<t.z&&i[2]>t.x)break}this.instanceCount=e;}updateAttributeData(t,e,n){let s=this.getAttribute(t);e?s&&s.array.length===e.length?(s.array.set(e),s.needsUpdate=true):(this.setAttribute(t,new InstancedBufferAttribute(e,n)),delete this._maxInstanceCount,this.dispose()):s&&this.deleteAttribute(t);}};
 
 function S$1({glyphBounds:L,atlasIndex:c,letterId:W,wordId:X,clipRect:e,posOffset:v,distanceOffset:u,blurRadius:r,totalBounds:d,sdfTextureSize:m,sdfGlyphSize:b}){return Fn(()=>{let o=vec4(L).toVar();o.addAssign(v.x,v.y.negate(),v.x,v.y.negate());let i=vec4(o).toVar(),x=float(u).toVar();i.addAssign(x.negate().sub(r),x.negate().sub(r),x.add(r),x.add(r));let w=vec4(clamp(i.xy,e.xy,e.zw),clamp(i.zw,e.xy,e.zw)).toVar(),Y=normalLocal.toVar(),y=vec2(o.xy).toVar(),z=vec2(o.zw).toVar(),T=vec2(mix(w.xy,w.zw,positionLocal.xy).sub(y).div(z.sub(y))).toVar(),P=vec3(mix(y,z,T),positionLocal.z).toVar(),q=vec2(P.xy.sub(d.xy).div(d.zw.sub(d.xy))).toVar(),p=float(m.x.div(b)).toVar(),U=vec2(b.div(m)).toVar(),k=vec2(U.mul(vec2(mod(floor(float(c).div(4)),p),floor(floor(float(c).div(4)).div(p))))).toVar();return varyingProperty("vec2","vTextStyleParams").assign(vec2(u,r)),varyingProperty("vec4","vTextPacked0").assign(vec4(q,T.xy)),varyingProperty("vec4","vTextTextureUVBounds").assign(vec4(k,vec2(k).add(U))),varyingProperty("vec4","vTextPacked1").assign(vec4(o.z.sub(o.x),o.w.sub(o.y),mod(float(c),4),W)),varyingProperty("float","vTextWordId").assign(X),varyingProperty("vec4","vThreeBlocksDimsChan").assign(vec4(o.z.sub(o.x),o.w.sub(o.y),mod(float(c),4),float(0))),normalLocal.assign(Y),P})}
@@ -10038,55 +10027,55 @@ class Demo extends component(Object3D, {
     this._galleryLinks = /* @__PURE__ */ new Map();
     this._raycaster = new Raycaster();
     const gal1Loader = new GLTFLoader();
-    gal1Loader.load("/Assets/Gallery1.glb", (gal1) => {
+    gal1Loader.load(resolvePublicPath("Assets/Gallery1.glb"), (gal1) => {
       this.add(gal1.scene);
       this.registerGalleryLink(gal1.scene, "https://www.refractstudio.net/mwvegas");
-      this.applyVideoTextureToObject(gal1.scene, "/Assets/Orange.mp4");
+      this.applyVideoTextureToObject(gal1.scene, resolvePublicPath("Assets/Orange.mp4"));
     });
     const gal1text = new GLTFLoader();
-    gal1text.load("/Assets/Text.glb", (gal1text2) => {
+    gal1text.load(resolvePublicPath("Assets/Text.glb"), (gal1text2) => {
       this.add(gal1text2.scene);
     });
     const gal2Loader = new GLTFLoader();
-    gal2Loader.load("/Assets/Gallery2.glb", (gal2) => {
+    gal2Loader.load(resolvePublicPath("Assets/Gallery2.glb"), (gal2) => {
       this.add(gal2.scene);
       this.registerGalleryLink(gal2.scene, "https://www.refractstudio.net/mwportals");
-      this.applyVideoTextureToObject(gal2.scene, "/Assets/Portals.mp4");
+      this.applyVideoTextureToObject(gal2.scene, resolvePublicPath("Assets/Portals.mp4"));
     });
     const gal3Loader = new GLTFLoader();
-    gal3Loader.load("/Assets/Gallery3.glb", (gal3) => {
+    gal3Loader.load(resolvePublicPath("Assets/Gallery3.glb"), (gal3) => {
       this.add(gal3.scene);
       this.registerGalleryLink(gal3.scene, "https://www.route66remixed.com/tour?location=lets-not-forget-albuquerque-is-a-character-too");
-      this.applyVideoTextureToObject(gal3.scene, "/Assets/cinimatest.mp4");
+      this.applyVideoTextureToObject(gal3.scene, resolvePublicPath("Assets/cinimatest.mp4"));
     });
     const gal4Loader = new GLTFLoader();
-    gal4Loader.load("/Assets/Gallery4.glb", (gal4) => {
+    gal4Loader.load(resolvePublicPath("Assets/Gallery4.glb"), (gal4) => {
       this.add(gal4.scene);
       this.registerGalleryLink(gal4.scene, "https://www.route66remixed.com/tour?location=the-old-road---el-viejo-camino");
-      this.applyVideoTextureToObject(gal4.scene, "/Assets/Dancer.mp4");
+      this.applyVideoTextureToObject(gal4.scene, resolvePublicPath("Assets/Dancer.mp4"));
     });
     const gal5Loader = new GLTFLoader();
-    gal5Loader.load("/Assets/Gallery5.glb", (gal5) => {
+    gal5Loader.load(resolvePublicPath("Assets/Gallery5.glb"), (gal5) => {
       this.add(gal5.scene);
       this.registerGalleryLink(gal5.scene, "https://avap-cmd.github.io/RefractProteinWebApp/");
-      this.applyVideoTextureToObject(gal5.scene, "/Assets/Protien Vis.mp4");
+      this.applyVideoTextureToObject(gal5.scene, resolvePublicPath("Assets/Protien Vis.mp4"));
     });
     const gal6Loader = new GLTFLoader();
-    gal6Loader.load("/Assets/Gallery6.glb", (gal6) => {
+    gal6Loader.load(resolvePublicPath("Assets/Gallery6.glb"), (gal6) => {
       this.add(gal6.scene);
       this.registerGalleryLink(gal6.scene, "https://www.youtube.com/watch?v=wSC3FplLdz0");
-      this.applyVideoTextureToObject(gal6.scene, "/Assets/ueenv.mp4");
+      this.applyVideoTextureToObject(gal6.scene, resolvePublicPath("Assets/ueenv.mp4"));
     });
     const gal7Loader = new GLTFLoader();
-    gal7Loader.load("/Assets/Gallery7.glb", (gal7) => {
+    gal7Loader.load(resolvePublicPath("Assets/Gallery7.glb"), (gal7) => {
       this.add(gal7.scene);
-      this.applyVideoTextureToObject(gal7.scene, "/Assets/arch.mp4");
+      this.applyVideoTextureToObject(gal7.scene, resolvePublicPath("Assets/arch.mp4"));
     });
     const gal8Loader = new GLTFLoader();
-    gal8Loader.load("/Assets/Gallery8.glb", (gal8) => {
+    gal8Loader.load(resolvePublicPath("Assets/Gallery8.glb"), (gal8) => {
       this.add(gal8.scene);
       this.registerGalleryLink(gal8.scene, "https://www.youtube.com/watch?v=NPFdrMhuLjk");
-      this.applyVideoTextureToObject(gal8.scene, "/Assets/jetpack.mp4");
+      this.applyVideoTextureToObject(gal8.scene, resolvePublicPath("Assets/jetpack.mp4"));
     });
     const dirLight = new DirectionalLight(16777215, 1);
     dirLight.position.set(5, 10, 5);
@@ -10203,8 +10192,8 @@ class Demo extends component(Object3D, {
 // Configure font map: CSS font-family → TTF URL for Text.js 3D rendering
 // Note: troika doesn't support woff2, must use TTF/OTF
 DOMTextManager.fontMap = {
-	'Geist Sans': '/fonts/Geist-Variable.ttf',
-	'Geist Mono': '/fonts/GeistMono-Variable.ttf'
+	'Geist Sans': resolvePublicPath( 'fonts/Geist-Variable.ttf' ),
+	'Geist Mono': resolvePublicPath( 'fonts/GeistMono-Variable.ttf' )
 };
 
 

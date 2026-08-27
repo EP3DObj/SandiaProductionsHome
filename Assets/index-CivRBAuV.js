@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/renderer-XREOSQm5.js","assets/pointer-AwCFRWz7.js","assets/raf-B9UXIpP4.js","assets/StatsGLNode-DotUFGhd.js","assets/site-CRleRZDI.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/renderer-CQB94c5y.js","assets/pointer-DZdKXALW.js","assets/raf-BRYDw8Fj.js","assets/StatsGLNode-5DfnYyeK.js","assets/site-DiDzSb-s.js"])))=>i.map(i=>d[i]);
 true              &&(function polyfill() {
 	const relList = document.createElement("link").relList;
 	if (relList && relList.supports && relList.supports("modulepreload")) return;
@@ -133424,7 +133424,7 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 		if ( offscreen && 'transferControlToOffscreen' in canvas ) {
 
 			const worker = new Worker(
-				new URL(/* @vite-ignore */ "/SandiaProductionsHome/assets/offscreen-DCV8N6fn.js", import.meta.url),
+				new URL(/* @vite-ignore */ "/SandiaProductionsHome/assets/offscreen-DhIfLJdZ.js", import.meta.url),
 				{
 					type: 'module',
 				}
@@ -133539,8 +133539,8 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 
 				try {
 
-					const { default: Renderer } = await __vitePreload(async () => { const { default: Renderer } = await import( './renderer-XREOSQm5.js' );return { default: Renderer }},true              ?__vite__mapDeps([0,1,2,3]):void 0);
-					const { default: Site } = await __vitePreload(async () => { const { default: Site } = await import( './site-CRleRZDI.js' );return { default: Site }},true              ?__vite__mapDeps([4,1,2]):void 0);
+					const { default: Renderer } = await __vitePreload(async () => { const { default: Renderer } = await import( './renderer-CQB94c5y.js' );return { default: Renderer }},true              ?__vite__mapDeps([0,1,2,3]):void 0);
+					const { default: Site } = await __vitePreload(async () => { const { default: Site } = await import( './site-DiDzSb-s.js' );return { default: Site }},true              ?__vite__mapDeps([4,1,2]):void 0);
 					const gl = new Renderer( {
 						canvas,
 						isWebGPU: Boolean( isWebGPU ),
@@ -133566,7 +133566,7 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 						store.stats = stats;
 
 						// Initialize texture captures for StatsGLNode
-						const { initStatsCaptures } = await __vitePreload(async () => { const { initStatsCaptures } = await import( './raf-B9UXIpP4.js' );return { initStatsCaptures }},true              ?[]:void 0);
+						const { initStatsCaptures } = await __vitePreload(async () => { const { initStatsCaptures } = await import( './raf-BRYDw8Fj.js' );return { initStatsCaptures }},true              ?[]:void 0);
 						await initStatsCaptures();
 
 					}
@@ -138672,6 +138672,17 @@ function getFresnelMat({ rimHex = 0x0088ff, facingHex = 0x000000 } = {}) {
 	});
 }
 
+const baseFromEnv = typeof import.meta !== "undefined" && "/SandiaProductionsHome/" ? "/SandiaProductionsHome/" : "/";
+const normalizedBase = baseFromEnv.endsWith("/") ? baseFromEnv.slice(0, -1) : baseFromEnv;
+function resolvePublicPath(target = "") {
+  const trimmed = target.replace(/^\//, "");
+  const prefix = normalizedBase || "";
+  if (!trimmed) {
+    return prefix || "/";
+  }
+  return `${prefix}/${trimmed}`;
+}
+
 async function initSecondScene(containerId = 'app2') {
 
 	const container = document.getElementById(containerId);
@@ -138720,7 +138731,7 @@ async function initSecondScene(containerId = 'app2') {
 	const mesh = new Mesh(
 		new IcosahedronGeometry(1, 12),
 		new MeshStandardMaterial({ 
-			map: colorLoader.load('public/Assets/earthmap1k.jpg'),
+			map: colorLoader.load( resolvePublicPath( 'Assets/earthmap1k.jpg' ) ),
 		})
 	);
 	earthSpin.add(mesh);
@@ -138728,7 +138739,7 @@ async function initSecondScene(containerId = 'app2') {
 	const lightMesh = new Mesh(
 		new IcosahedronGeometry(1, 12),
 		new MeshStandardMaterial({ 
-			map: lightLoader.load('public/Assets/earthlights1k.jpg'),
+			map: lightLoader.load( resolvePublicPath( 'Assets/earthlights1k.jpg' ) ),
 		    blending: AdditiveBlending,
 			depthWrite: false,
 		})
@@ -138739,7 +138750,7 @@ async function initSecondScene(containerId = 'app2') {
 	const cloudMesh = new Mesh(
 		new IcosahedronGeometry(1, 12),
 		new MeshStandardMaterial({ 
-			map: cloudLoader.load('public/Assets/earthcloudmaptrans.jpg'),
+			map: cloudLoader.load( resolvePublicPath( 'Assets/earthcloudmaptrans.jpg' ) ),
 		    blending: AdditiveBlending,
 			depthWrite: false,
 		})
@@ -138853,7 +138864,7 @@ async function initSecondScene(containerId = 'app2') {
 	const loader = new GLTFLoader();
 	let mixer = null;
 	const clock = new Clock$1();
-	loader.load('/Assets/RicketShip.glb', (gltf) => {
+	loader.load( resolvePublicPath( 'Assets/RicketShip.glb' ), (gltf) => {
 		gltf.scene.scale.set(0.5, 0.5, 0.5);
 		scene.add(gltf.scene);
 		if (gltf.animations.length) {
@@ -138908,35 +138919,5 @@ ${hardwareInfo ? `Hardware Info: ${hardwareInfo} 🖥️` : ''}
 `);
 			}
 		);
-		document.addEventListener('DOMContentLoaded', () => {
-			const interBubble = document.querySelector('.interactive');
-			let curX = 0;
-			let curY = 0;
-			let tgX = 0;
-			let tgY = 0;
-			function move() {
-				curX += (tgX - curX) / 10;
-				curY += (tgY - curY) / 10;
-				interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
-				requestAnimationFrame(() => {
-					move();
-				});
-			}
-			window.addEventListener('mousemove', (event) => {
-				tgX = event.clientX;
-				tgY = event.clientY;
-			});
-			move();
 
-			const revealEls = document.querySelectorAll('.reveal-from-left, .reveal-from-right');
-			const revealObserver = new IntersectionObserver((entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('is-visible');
-					}
-				});
-			}, { threshold: 0.2 });
-			revealEls.forEach((el) => revealObserver.observe(el));
-		});
-
-export { Data3DTexture as $, ACESFilmicToneMapping as A, BasicShadowMap as B, Color as C, RG11_EAC_Format as D, SIGNED_R11_EAC_Format as E, FileLoader as F, R11_EAC_Format as G, RGB_ETC2_Format as H, InterleavedBuffer as I, RGBA_ETC2_EAC_Format as J, RGBFormat as K, Loader as L, RedFormat as M, NoColorSpace as N, OrthographicCamera as O, PostProcessing as P, RGFormat as Q, RGBA_PVRTC_2BPPV1_Format as R, SRGBColorSpace as S, RGBAFormat as T, UnsignedByteType as U, HalfFloatType as V, WebGPURenderer as W, UnsignedInt101111Type as X, UnsignedInt5999Type as Y, FloatType as Z, DataTexture as _, LinearSRGBColorSpace as a, Quaternion as a$, NearestMipmapNearestFilter as a0, NearestFilter as a1, RGB_PVRTC_4BPPV1_Format as a2, RGB_ETC1_Format as a3, RGBA_S3TC_DXT5_Format as a4, RGB_BPTC_UNSIGNED_Format as a5, DataTextureLoader as a6, DataUtils as a7, InstancedBufferGeometry as a8, Sphere as a9, div as aA, smoothstep as aB, diffuseColor as aC, If as aD, Mesh as aE, MeshBasicNodeMaterial as aF, DoubleSide as aG, uniform as aH, Vector2 as aI, Matrix3 as aJ, Vector4 as aK, texture as aL, modelWorldMatrix as aM, cameraPosition as aN, cameraProjectionMatrix as aO, cameraViewMatrix as aP, modelViewMatrix as aQ, screenSize as aR, cameraViewport as aS, Vector3 as aT, Matrix4 as aU, Curve as aV, CubicBezierCurve3 as aW, CurvePath as aX, CatmullRomCurve3 as aY, LineBasicMaterial as aZ, Line as a_, Box3 as aa, InstancedBufferAttribute as ab, PlaneGeometry as ac, Fn as ad, vec4 as ae, float as af, clamp as ag, normalLocal as ah, vec2 as ai, mix as aj, positionLocal as ak, vec3 as al, mod as am, floor as an, varyingProperty as ao, CanvasTexture as ap, nodeProxy as aq, Node$1 as ar, attribute as as, subBuild as at, max as au, sub as av, pow as aw, select as ax, length as ay, fwidth as az, BufferGeometry as b, Euler as b0, CubeTexture as b1, GLTFLoader as b2, Texture as b3, ImageBitmapLoader as b4, TextureLoader as b5, Scene as b6, BoxGeometry as b7, MeshStandardMaterial as b8, BackSide as b9, NoToneMapping as bA, addMethodChaining as bB, PointLight as ba, InstancedMesh as bb, Object3D as bc, MeshLambertMaterial as bd, Raycaster as be, DirectionalLight as bf, AmbientLight as bg, VideoTexture as bh, PMREMGenerator as bi, Controls as bj, MOUSE as bk, TOUCH as bl, Spherical as bm, Ray as bn, Plane as bo, MathUtils as bp, PerspectiveCamera as bq, isMobileOrTablet as br, EventDispatcher as bs, __vitePreload as bt, engine as bu, nodeObject as bv, CanvasTarget as bw, NodeMaterial as bx, QuadMesh as by, RendererUtils as bz, BufferAttribute as c, dispatcherSingleton as d, ColorManagement as e, InterleavedBufferAttribute as f, CompressedCubeTexture as g, CompressedArrayTexture as h, CompressedTexture as i, LinearFilter as j, LinearMipmapLinearFilter as k, RGBA_PVRTC_4BPPV1_Format as l, RGBA_BPTC_Format as m, RED_GREEN_RGTC2_Format as n, SIGNED_RED_GREEN_RGTC2_Format as o, pass as p, RED_RGTC1_Format as q, renderOutput as r, store as s, SIGNED_RED_RGTC1_Format as t, RGBA_S3TC_DXT3_Format as u, RGB_S3TC_DXT1_Format as v, RGBA_S3TC_DXT1_Format as w, RGBA_ASTC_6x6_Format as x, RGBA_ASTC_4x4_Format as y, SIGNED_RG11_EAC_Format as z };
+export { Data3DTexture as $, ACESFilmicToneMapping as A, BasicShadowMap as B, Color as C, RG11_EAC_Format as D, SIGNED_R11_EAC_Format as E, FileLoader as F, R11_EAC_Format as G, RGB_ETC2_Format as H, InterleavedBuffer as I, RGBA_ETC2_EAC_Format as J, RGBFormat as K, Loader as L, RedFormat as M, NoColorSpace as N, OrthographicCamera as O, PostProcessing as P, RGFormat as Q, RGBA_PVRTC_2BPPV1_Format as R, SRGBColorSpace as S, RGBAFormat as T, UnsignedByteType as U, HalfFloatType as V, WebGPURenderer as W, UnsignedInt101111Type as X, UnsignedInt5999Type as Y, FloatType as Z, DataTexture as _, LinearSRGBColorSpace as a, Quaternion as a$, NearestMipmapNearestFilter as a0, NearestFilter as a1, RGB_PVRTC_4BPPV1_Format as a2, RGB_ETC1_Format as a3, RGBA_S3TC_DXT5_Format as a4, RGB_BPTC_UNSIGNED_Format as a5, DataTextureLoader as a6, DataUtils as a7, InstancedBufferGeometry as a8, Sphere as a9, div as aA, smoothstep as aB, diffuseColor as aC, If as aD, Mesh as aE, MeshBasicNodeMaterial as aF, DoubleSide as aG, uniform as aH, Vector2 as aI, Matrix3 as aJ, Vector4 as aK, texture as aL, modelWorldMatrix as aM, cameraPosition as aN, cameraProjectionMatrix as aO, cameraViewMatrix as aP, modelViewMatrix as aQ, screenSize as aR, cameraViewport as aS, Vector3 as aT, Matrix4 as aU, Curve as aV, CubicBezierCurve3 as aW, CurvePath as aX, CatmullRomCurve3 as aY, LineBasicMaterial as aZ, Line as a_, Box3 as aa, InstancedBufferAttribute as ab, PlaneGeometry as ac, Fn as ad, vec4 as ae, float as af, clamp as ag, normalLocal as ah, vec2 as ai, mix as aj, positionLocal as ak, vec3 as al, mod as am, floor as an, varyingProperty as ao, CanvasTexture as ap, nodeProxy as aq, Node$1 as ar, attribute as as, subBuild as at, max as au, sub as av, pow as aw, select as ax, length as ay, fwidth as az, BufferGeometry as b, Euler as b0, CubeTexture as b1, GLTFLoader as b2, Texture as b3, resolvePublicPath as b4, ImageBitmapLoader as b5, TextureLoader as b6, Scene as b7, BoxGeometry as b8, MeshStandardMaterial as b9, RendererUtils as bA, NoToneMapping as bB, addMethodChaining as bC, BackSide as ba, PointLight as bb, InstancedMesh as bc, Object3D as bd, MeshLambertMaterial as be, Raycaster as bf, DirectionalLight as bg, AmbientLight as bh, VideoTexture as bi, PMREMGenerator as bj, Controls as bk, MOUSE as bl, TOUCH as bm, Spherical as bn, Ray as bo, Plane as bp, MathUtils as bq, PerspectiveCamera as br, isMobileOrTablet as bs, EventDispatcher as bt, __vitePreload as bu, engine as bv, nodeObject as bw, CanvasTarget as bx, NodeMaterial as by, QuadMesh as bz, BufferAttribute as c, dispatcherSingleton as d, ColorManagement as e, InterleavedBufferAttribute as f, CompressedCubeTexture as g, CompressedArrayTexture as h, CompressedTexture as i, LinearFilter as j, LinearMipmapLinearFilter as k, RGBA_PVRTC_4BPPV1_Format as l, RGBA_BPTC_Format as m, RED_GREEN_RGTC2_Format as n, SIGNED_RED_GREEN_RGTC2_Format as o, pass as p, RED_RGTC1_Format as q, renderOutput as r, store as s, SIGNED_RED_RGTC1_Format as t, RGBA_S3TC_DXT3_Format as u, RGB_S3TC_DXT1_Format as v, RGBA_S3TC_DXT1_Format as w, RGBA_ASTC_6x6_Format as x, RGBA_ASTC_4x4_Format as y, SIGNED_RG11_EAC_Format as z };
