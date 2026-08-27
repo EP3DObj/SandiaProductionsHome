@@ -778,7 +778,7 @@
 
 	<div class="header">
 		<div class="header-content">
-			<img src="public\Assets\Logo.png" alt="Sandia Productions Logo">
+			<img src="/Assets/Logo.png" alt="Sandia Productions Logo">
 			<h1>Sandia Productions</h1>
 		</div>
 	</div>
@@ -822,7 +822,7 @@
 					ep3dobj@gmail.com</p>
 			</div>
 
-			<img class="reveal-from-left" src="public\Assets\new.png" alt="Elijah Pryor">
+			<img class="reveal-from-left" src="/Assets/new.png" alt="Elijah Pryor">
 		</div>
 	</div>
 	<div class="skills">
@@ -881,9 +881,43 @@
 		<div id="app2"></div>
 	</div>
 
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const interBubble = document.querySelector('.interactive');
+			let curX = 0;
+			let curY = 0;
+			let tgX = 0;
+			let tgY = 0;
+			function move() {
+				curX += (tgX - curX) / 10;
+				curY += (tgY - curY) / 10;
+				if (interBubble) {
+					interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+				}
+				requestAnimationFrame(() => {
+					move();
+				});
+			}
+			window.addEventListener('mousemove', (event) => {
+				tgX = event.clientX;
+				tgY = event.clientY;
+			});
+			move();
+
+			const revealEls = document.querySelectorAll('.reveal-from-left, .reveal-from-right');
+			const revealObserver = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('is-visible');
+					}
+				});
+			}, { threshold: 0.2 });
+			revealEls.forEach((el) => revealObserver.observe(el));
+		});
+	</script>
+
 	<script type="module">
 		import { init, dispatcher } from './src/index.js';
-		import debugInfo from './src/offscreen/utils/debugInfos.js';
 		import { initSecondScene } from './src/secondScene.js';
 
 		init({
@@ -905,36 +939,6 @@ ${hardwareInfo ? `Hardware Info: ${hardwareInfo} 🖥️` : ''}
 `);
 			}
 		);
-		document.addEventListener('DOMContentLoaded', () => {
-			const interBubble = document.querySelector('.interactive');
-			let curX = 0;
-			let curY = 0;
-			let tgX = 0;
-			let tgY = 0;
-			function move() {
-				curX += (tgX - curX) / 10;
-				curY += (tgY - curY) / 10;
-				interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
-				requestAnimationFrame(() => {
-					move();
-				});
-			}
-			window.addEventListener('mousemove', (event) => {
-				tgX = event.clientX;
-				tgY = event.clientY;
-			});
-			move();
-
-			const revealEls = document.querySelectorAll('.reveal-from-left, .reveal-from-right');
-			const revealObserver = new IntersectionObserver((entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('is-visible');
-					}
-				});
-			}, { threshold: 0.2 });
-			revealEls.forEach((el) => revealObserver.observe(el));
-		});
 	</script>
 
 	<!-- 	<script type="module">

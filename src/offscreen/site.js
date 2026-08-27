@@ -15,12 +15,13 @@ import '@/offscreen/dispatcher';
 
 // DOM Text synchronization
 import DOMTextManager from '@/offscreen/domText/DOMTextManager';
+import { resolvePublicPath } from '@/offscreen/utils/publicPath';
 
 // Configure font map: CSS font-family → TTF URL for Text.js 3D rendering
 // Note: troika doesn't support woff2, must use TTF/OTF
 DOMTextManager.fontMap = {
-	'Geist Sans': '/fonts/Geist-Variable.ttf',
-	'Geist Mono': '/fonts/GeistMono-Variable.ttf'
+	'Geist Sans': resolvePublicPath( 'fonts/Geist-Variable.ttf' ),
+	'Geist Mono': resolvePublicPath( 'fonts/GeistMono-Variable.ttf' )
 };
 
 // SPH Demo
