@@ -3,7 +3,8 @@ import { fileURLToPath } from 'node:url';
 import { URL } from 'node:url';
 
 export default defineConfig( {
-	base: '/SandiaProductionsHome/',
+	// Relative so both custom-domain root and github.io/repo/ resolve assets
+	base: './',
 	server: {
 		port: 4000,
 		headers: {
