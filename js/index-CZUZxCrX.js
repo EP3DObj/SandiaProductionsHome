@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["js/renderer-BDN2FLBT.js","js/pointer-0i-MCJ4q.js","js/raf-C22adq8F.js","js/StatsGLNode-Dpu-NVHu.js","js/site-BqJSFf8t.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./renderer-3ldFO30s.js","./pointer-BbU_r_0E.js","./raf-BOZSV7SM.js","./StatsGLNode-BEAiUpot.js","./site-BUiFzQV3.js"])))=>i.map(i=>d[i]);
 true              &&(function polyfill() {
 	const relList = document.createElement("link").relList;
 	if (relList && relList.supports && relList.supports("modulepreload")) return;
@@ -123685,10 +123685,10 @@ class Dispatcher {
 
 const dispatcherSingleton = /* @__PURE__ */ new Dispatcher();
 
-const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/SandiaProductionsHome/"+dep };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
+const scriptRel = 'modulepreload';const assetsURL = function(dep, importerUrl) { return new URL(dep, importerUrl).href };const seen = {};const __vitePreload = function preload(baseModule, deps, importerUrl) {
 	let promise = Promise.resolve();
 	if (true               && deps && deps.length > 0) {
-		document.getElementsByTagName("link");
+		const links = document.getElementsByTagName("link");
 		const cspNonceMeta = document.querySelector("meta[property=csp-nonce]");
 		const cspNonce = cspNonceMeta?.nonce || cspNonceMeta?.getAttribute("nonce");
 		function allSettled(promises$2) {
@@ -123701,12 +123701,16 @@ const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/San
 			}))));
 		}
 		promise = allSettled(deps.map((dep) => {
-			dep = assetsURL(dep);
+			dep = assetsURL(dep, importerUrl);
 			if (dep in seen) return;
 			seen[dep] = true;
 			const isCss = dep.endsWith(".css");
 			const cssSelector = isCss ? "[rel=\"stylesheet\"]" : "";
-			if (document.querySelector(`link[href="${dep}"]${cssSelector}`)) return;
+			if (!!importerUrl) for (let i$1 = links.length - 1; i$1 >= 0; i$1--) {
+				const link$1 = links[i$1];
+				if (link$1.href === dep && (!isCss || link$1.rel === "stylesheet")) return;
+			}
+			else if (document.querySelector(`link[href="${dep}"]${cssSelector}`)) return;
 			const link = document.createElement("link");
 			link.rel = isCss ? "stylesheet" : scriptRel;
 			if (!isCss) link.as = "script";
@@ -125072,7 +125076,7 @@ async function setupRecording( { context, api, options = {} } ) {
 
 	dispatcherSingleton.on( 'loadEnd', async () => {
 
-		const { Recorder, RecorderStatus, Encoders } = await __vitePreload(async () => { const { Recorder, RecorderStatus, Encoders } = await import( './index-pPavcw-t.js' );return { Recorder, RecorderStatus, Encoders }},true              ?[]:void 0);
+		const { Recorder, RecorderStatus, Encoders } = await __vitePreload(async () => { const { Recorder, RecorderStatus, Encoders } = await import( './index-BxIaA4Od.js' );return { Recorder, RecorderStatus, Encoders }},true              ?[]:void 0,import.meta.url);
 
 		canvasRecorder = new Recorder( context, {
 			name: `canvas-record-example-${CONFIG.encoder || 'default'}`,
@@ -133424,7 +133428,7 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 		if ( offscreen && 'transferControlToOffscreen' in canvas ) {
 
 			const worker = new Worker(
-				new URL(/* @vite-ignore */ "/SandiaProductionsHome/js/offscreen-DhIfLJdZ.js", import.meta.url),
+				new URL(/* @vite-ignore */ ""+new URL('offscreen-oS_ncT32.js', import.meta.url).href+"", import.meta.url),
 				{
 					type: 'module',
 				}
@@ -133490,7 +133494,7 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 			// Initialize stats-gl for offscreen mode
 			if ( debug ) {
 
-				const { default: Stats } = await __vitePreload(async () => { const { default: Stats } = await import( './main-BRTwojP8.js' );return { default: Stats }},true              ?[]:void 0);
+				const { default: Stats } = await __vitePreload(async () => { const { default: Stats } = await import( './main-BRTwojP8.js' );return { default: Stats }},true              ?[]:void 0,import.meta.url);
 				await api.initStats( { trackGPU: true, trackCPT: isWebGPU } );
 
 				const stats = new Stats( { trackGPU: true, trackCPT: isWebGPU } );
@@ -133539,8 +133543,8 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 
 				try {
 
-					const { default: Renderer } = await __vitePreload(async () => { const { default: Renderer } = await import( './renderer-BDN2FLBT.js' );return { default: Renderer }},true              ?__vite__mapDeps([0,1,2,3]):void 0);
-					const { default: Site } = await __vitePreload(async () => { const { default: Site } = await import( './site-BqJSFf8t.js' );return { default: Site }},true              ?__vite__mapDeps([4,1,2]):void 0);
+					const { default: Renderer } = await __vitePreload(async () => { const { default: Renderer } = await import( './renderer-3ldFO30s.js' );return { default: Renderer }},true              ?__vite__mapDeps([0,1,2,3]):void 0,import.meta.url);
+					const { default: Site } = await __vitePreload(async () => { const { default: Site } = await import( './site-BUiFzQV3.js' );return { default: Site }},true              ?__vite__mapDeps([4,1,2]):void 0,import.meta.url);
 					const gl = new Renderer( {
 						canvas,
 						isWebGPU: Boolean( isWebGPU ),
@@ -133559,14 +133563,14 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 					// Initialize stats-gl for main-thread mode
 					if ( debug ) {
 
-						const { default: Stats } = await __vitePreload(async () => { const { default: Stats } = await import( './main-BRTwojP8.js' );return { default: Stats }},true              ?[]:void 0);
+						const { default: Stats } = await __vitePreload(async () => { const { default: Stats } = await import( './main-BRTwojP8.js' );return { default: Stats }},true              ?[]:void 0,import.meta.url);
 						const stats = new Stats( { trackGPU: true, trackCPT: isWebGPU } );
 						await stats.init( gl );
 						container.appendChild( stats.dom );
 						store.stats = stats;
 
 						// Initialize texture captures for StatsGLNode
-						const { initStatsCaptures } = await __vitePreload(async () => { const { initStatsCaptures } = await import( './raf-C22adq8F.js' );return { initStatsCaptures }},true              ?[]:void 0);
+						const { initStatsCaptures } = await __vitePreload(async () => { const { initStatsCaptures } = await import( './raf-BOZSV7SM.js' );return { initStatsCaptures }},true              ?[]:void 0,import.meta.url);
 						await initStatsCaptures();
 
 					}
@@ -138672,7 +138676,7 @@ function getFresnelMat({ rimHex = 0x0088ff, facingHex = 0x000000 } = {}) {
 	});
 }
 
-const baseFromEnv = typeof import.meta !== "undefined" && "/SandiaProductionsHome/" ? "/SandiaProductionsHome/" : "/";
+const baseFromEnv = typeof import.meta !== "undefined" && "./" ? "./" : "/";
 const normalizedBase = baseFromEnv.endsWith("/") ? baseFromEnv.slice(0, -1) : baseFromEnv;
 function resolvePublicPath(target = "") {
   const trimmed = target.replace(/^\//, "");

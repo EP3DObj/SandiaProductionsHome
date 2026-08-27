@@ -11621,7 +11621,7 @@ class FFmpeg {
                 }) :
                 // We need to duplicated the code here to enable webpack
                 // to bundle worekr.js here.
-                new Worker(new URL(/* @vite-ignore */ "/SandiaProductionsHome/js/worker-BK0TPDk5.js", import.meta.url), {
+                new Worker(new URL(/* @vite-ignore */ ""+new URL('worker-BK0TPDk5.js', import.meta.url).href+"", import.meta.url), {
                     type: "module",
                 });
             this.#registerHandlers();

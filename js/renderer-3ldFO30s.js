@@ -1,7 +1,7 @@
-import { c as component, s as scene, a as camera } from './pointer-0i-MCJ4q.js';
-import './raf-C22adq8F.js';
-import { B as BasicShadowMap, p as pass, r as renderOutput, A as ACESFilmicToneMapping, P as PostProcessing, W as WebGPURenderer } from './index-y6JwgF0d.js';
-import { statsGL } from './StatsGLNode-Dpu-NVHu.js';
+import { c as component, s as scene, a as camera } from './pointer-BbU_r_0E.js';
+import './raf-BOZSV7SM.js';
+import { B as BasicShadowMap, p as pass, r as renderOutput, A as ACESFilmicToneMapping, P as PostProcessing, W as WebGPURenderer } from './index-CZUZxCrX.js';
+import { statsGL } from './StatsGLNode-BEAiUpot.js';
 
 class RendererImpl extends component( WebGPURenderer, {
 	raf: {

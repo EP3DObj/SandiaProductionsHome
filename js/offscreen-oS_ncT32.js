@@ -135129,7 +135129,7 @@ const RESOURCES = [
 	// }
 ];
 
-const baseFromEnv = typeof import.meta !== "undefined" && "/SandiaProductionsHome/" ? "/SandiaProductionsHome/" : "/";
+const baseFromEnv = typeof import.meta !== "undefined" && "./" ? "./" : "/";
 const normalizedBase = baseFromEnv.endsWith("/") ? baseFromEnv.slice(0, -1) : baseFromEnv;
 function resolvePublicPath(target = "") {
   const trimmed = target.replace(/^\//, "");
