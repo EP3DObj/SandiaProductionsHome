@@ -30,6 +30,17 @@ export class Demo extends component( THREE.Object3D, {
 		const gal1text = new GLTFLoader();
 		gal1text.load( resolvePublicPath( 'Assets/Text.glb' ), ( gal1text ) => {
 			this.add( gal1text.scene );
+			gal1text.scene.traverse( ( child ) => {
+
+				if ( ! child.isMesh ) return;
+
+				child.material = new THREE.MeshStandardMaterial( {
+					color: 0xffffff,
+					emissive: 0xffffff,
+					emissiveIntensity: 1,
+				} );
+
+			} );
 		} );
 		const gal2Loader = new GLTFLoader();
 		gal2Loader.load( resolvePublicPath( 'Assets/Gallery2.glb' ), ( gal2 ) => {
@@ -242,11 +253,7 @@ export class Demo extends component( THREE.Object3D, {
 
 	}
 
-	onRaf( { delta } ) {
-
-
-
-	}
+	onRaf() {}
 
 	onResize() {}
 
