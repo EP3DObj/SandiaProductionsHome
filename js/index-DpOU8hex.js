@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./renderer-3ldFO30s.js","./pointer-BbU_r_0E.js","./raf-BOZSV7SM.js","./StatsGLNode-BEAiUpot.js","./site-BUiFzQV3.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./renderer-C4m7c0Yg.js","./pointer-BzmVL6Na.js","./raf-CartBcHU.js","./StatsGLNode-CPQSzk2b.js","./site-CNL-V1ix.js"])))=>i.map(i=>d[i]);
 true              &&(function polyfill() {
 	const relList = document.createElement("link").relList;
 	if (relList && relList.supports && relList.supports("modulepreload")) return;
@@ -133428,7 +133428,7 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 		if ( offscreen && 'transferControlToOffscreen' in canvas ) {
 
 			const worker = new Worker(
-				new URL(/* @vite-ignore */ ""+new URL('offscreen-oS_ncT32.js', import.meta.url).href+"", import.meta.url),
+				new URL(/* @vite-ignore */ ""+new URL('offscreen-Dqj3Ro07.js', import.meta.url).href+"", import.meta.url),
 				{
 					type: 'module',
 				}
@@ -133543,8 +133543,8 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 
 				try {
 
-					const { default: Renderer } = await __vitePreload(async () => { const { default: Renderer } = await import( './renderer-3ldFO30s.js' );return { default: Renderer }},true              ?__vite__mapDeps([0,1,2,3]):void 0,import.meta.url);
-					const { default: Site } = await __vitePreload(async () => { const { default: Site } = await import( './site-BUiFzQV3.js' );return { default: Site }},true              ?__vite__mapDeps([4,1,2]):void 0,import.meta.url);
+					const { default: Renderer } = await __vitePreload(async () => { const { default: Renderer } = await import( './renderer-C4m7c0Yg.js' );return { default: Renderer }},true              ?__vite__mapDeps([0,1,2,3]):void 0,import.meta.url);
+					const { default: Site } = await __vitePreload(async () => { const { default: Site } = await import( './site-CNL-V1ix.js' );return { default: Site }},true              ?__vite__mapDeps([4,1,2]):void 0,import.meta.url);
 					const gl = new Renderer( {
 						canvas,
 						isWebGPU: Boolean( isWebGPU ),
@@ -133570,7 +133570,7 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 						store.stats = stats;
 
 						// Initialize texture captures for StatsGLNode
-						const { initStatsCaptures } = await __vitePreload(async () => { const { initStatsCaptures } = await import( './raf-BOZSV7SM.js' );return { initStatsCaptures }},true              ?[]:void 0,import.meta.url);
+						const { initStatsCaptures } = await __vitePreload(async () => { const { initStatsCaptures } = await import( './raf-CartBcHU.js' );return { initStatsCaptures }},true              ?[]:void 0,import.meta.url);
 						await initStatsCaptures();
 
 					}

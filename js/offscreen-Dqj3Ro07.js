@@ -139134,6 +139134,14 @@ class Demo extends component(Object3D, {
     const gal1text = new GLTFLoader();
     gal1text.load(resolvePublicPath("Assets/Text.glb"), (gal1text2) => {
       this.add(gal1text2.scene);
+      gal1text2.scene.traverse((child) => {
+        if (!child.isMesh) return;
+        child.material = new MeshStandardMaterial({
+          color: 16777215,
+          emissive: 16777215,
+          emissiveIntensity: 1
+        });
+      });
     });
     const gal2Loader = new GLTFLoader();
     gal2Loader.load(resolvePublicPath("Assets/Gallery2.glb"), (gal2) => {
@@ -139279,7 +139287,7 @@ class Demo extends component(Object3D, {
       obj = obj.parent;
     }
   }
-  onRaf({ delta }) {
+  onRaf() {
   }
   onResize() {
   }
