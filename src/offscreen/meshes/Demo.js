@@ -53,8 +53,8 @@ export class Demo extends component( THREE.Object3D, {
 		gal3Loader.load( resolvePublicPath( 'Assets/Gallery3.glb' ), ( gal3 ) => {
 
 			this.add( gal3.scene );
-			this.registerGalleryLink( gal3.scene, 'https://www.route66remixed.com/tour?location=lets-not-forget-albuquerque-is-a-character-too' );
-			this.applyVideoTextureToObject( gal3.scene, resolvePublicPath( 'Assets/cinimatest.mp4' ) );
+			this.registerGalleryLink( gal3.scene, 'https://ep3dobj.github.io/VirtualToursElijahPryor/' );
+			this.applyVideoTextureToObject( gal3.scene, resolvePublicPath( 'Assets/Splat.mp4' ) );
 		} );
 		const gal4Loader = new GLTFLoader();
 		gal4Loader.load( resolvePublicPath( 'Assets/Gallery4.glb' ), ( gal4 ) => {
