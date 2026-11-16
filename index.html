@@ -579,6 +579,75 @@
 			border-radius: 20px;
 		}
 
+		.mobile-gallery {
+			display: none;
+			width: 90%;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: none;
+		}
+
+		.mobile-gallery::-webkit-scrollbar {
+			display: none;
+		}
+
+		.mobile-gallery-track {
+			display: flex;
+		}
+
+		.mobile-gallery figure {
+			flex: 0 0 100%;
+			scroll-snap-align: start;
+			margin: 0;
+			transform-origin: center center;
+		}
+
+		.mobile-gallery-image {
+			width: 100%;
+			aspect-ratio: 1;
+			border-radius: 20px;
+			outline: 5px solid rgb(0, 247, 255);
+			background: linear-gradient(110deg, rgb(0, 247, 255), rgb(174, 0, 255));
+			overflow: hidden;
+			touch-action: pan-x;
+		}
+
+		.mobile-gallery-image img,
+		.mobile-gallery-image video {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+
+		.mobile-gallery figcaption {
+			color: white;
+			text-align: center;
+			padding: 1rem 0;
+		}
+
+		.mobile-gallery figure a {
+			color: inherit;
+			text-decoration: none;
+			display: block;
+		}
+
+		body.no-first-app #app {
+			display: none;
+		}
+
+		body.no-first-app .mobile-gallery {
+			display: block;
+		}
+
+		body.no-first-app .app-container:has(> #app) {
+			height: auto;
+			min-height: 0;
+			padding-top: 1vh;
+			padding-bottom: 3vh;
+		}
+
 		.app-spacer {
 			height: 25vh;
 			width: 100%;
@@ -780,7 +849,7 @@
 			}
 		}
 	</style>
-  <script type="module" crossorigin src="./js/index-DpOU8hex.js"></script>
+  <script type="module" crossorigin src="./js/index-B-OyXdaF.js"></script>
 </head>
 
 <body>
@@ -818,7 +887,7 @@
 			<div class="content">
 				<div class="content-text">
 					<h1>Elijah Pryor</h1>
-					<h2>Augmented Reality and 3D Specialist</h2>
+					<h2>Techincal Artist, XR Specialist, and Developer</h2>
 				</div>
 			</div>
 		</div>
@@ -828,7 +897,7 @@
 		<div class="profile">
 			<div class="about reveal-from-right">
 				<button>About Me</button>
-				<p>I specialize in creating Immersive and Engaging 3D experiences for Augmented Reality and WebXR.<br>
+				<p>I specialize in creating Immersive and Engaging 3D experiences for Augmented Reality, VFX, Games, WebXR, and more.<br>
 					I look forward to collaborating with you!<br>
 					ep3dobj@gmail.com</p>
 			</div>
@@ -854,7 +923,7 @@
 		<div class="programs reveal-from-right">
 			<button>Programs</button>
 			<ul>
-				<li>8th Wall (R.I.P.)</li>
+				<li>8th Wall</li>
 				<li>Unity</li>
 				<li>Unreal Engine</li>
 				<li>Blender</li>
@@ -871,6 +940,138 @@
 	</div>
 	<div class="app-container">
 		<div id="app"></div>
+		<div class="mobile-gallery" aria-label="Project gallery">
+			<div class="mobile-gallery-track">
+				<figure>
+					<a href="https://ep3dobj.github.io/VirtualToursElijahPryor/" target="_blank" rel="noopener noreferrer">
+						<div class="mobile-gallery-image">
+							<video src="./Assets/Splat.mp4" autoplay muted loop playsinline></video>
+						</div>
+						<figcaption>Spatial Virtural Tours</figcaption>
+					</a>
+				</figure>
+				<figure>
+					<a href="https://www.refractstudio.net/mwvegas" target="_blank" rel="noopener noreferrer">
+						<div class="mobile-gallery-image">
+							<video src="./Assets/Orange.mp4" autoplay muted loop playsinline></video>
+						</div>
+						<figcaption>Orange Mitosis, Webby Nominated Omega Mart Las Vegas NV Collaboration</figcaption>
+					</a>
+				</figure>
+				<figure>
+					<div class="mobile-gallery-image">
+						<video src="./Assets/arch.mp4" autoplay muted loop playsinline></video>
+					</div>
+					<figcaption>Architectural Visualization</figcaption>
+				</figure>
+				<figure>
+					<a href="https://www.refractstudio.net/mwportals" target="_blank" rel="noopener noreferrer">
+						<div class="mobile-gallery-image">
+							<video src="./Assets/Portals.mp4" autoplay muted loop playsinline></video>
+						</div>
+						<figcaption>Portals, Webby Nominated Meow Wolf Collaboration</figcaption>
+					</a>
+				</figure>
+				<figure>
+					<div class="mobile-gallery-image">
+						<video src="./Assets/ueenv.mp4" autoplay muted loop playsinline></video>
+					</div>
+					<figcaption>Unreal Engine Environment, VR Ready</figcaption>
+				</figure>
+				<figure>
+					<a href="https://www.refractstudio.net/mwvegas" target="_blank" rel="noopener noreferrer">
+					<div class="mobile-gallery-image">
+						<video src="./Assets/Dancer.mp4" autoplay muted loop playsinline></video>
+					</div>
+					<figcaption>Dancer, Route 66 collaboration</figcaption>
+					</a>
+				</figure>
+				<figure>
+					<div class="mobile-gallery-image">
+						<video src="./Assets/jetpack.mp4" autoplay muted loop playsinline></video>
+					</div>
+					<figcaption>Jet Pack, Houdini Simulation</figcaption>
+				</figure>
+				<figure>
+					<div class="mobile-gallery-image">
+						<video src="./Assets/bloodclot.mp4" autoplay muted loop playsinline></video>
+					</div>
+					<figcaption>Medical Animation</figcaption>
+				</figure>
+				<figure>
+					<a href="https://avap-cmd.github.io/RefractProteinWebApp/" target="_blank" rel="noopener noreferrer">
+					<div class="mobile-gallery-image">
+						<video src="./Assets/Protien Vis.mp4" autoplay muted loop playsinline></video>
+					</div>
+					<figcaption>Protein Visualization</figcaption>
+					</a>
+				</figure>
+				<figure>
+					<a href="https://ep3dobj.github.io/VirtualToursElijahPryor/" target="_blank" rel="noopener noreferrer">
+						<div class="mobile-gallery-image">
+							<video src="./Assets/Splat.mp4" autoplay muted loop playsinline></video>
+						</div>
+						<figcaption>Spatial Virtural Tours</figcaption>
+					</a>
+				</figure>
+				<figure>
+					<a href="https://www.refractstudio.net/mwvegas" target="_blank" rel="noopener noreferrer">
+						<div class="mobile-gallery-image">
+							<video src="./Assets/Orange.mp4" autoplay muted loop playsinline></video>
+						</div>
+						<figcaption>Orange Mitosis, Webby Nominated Omega Mart Las Vegas NV Collaboration</figcaption>
+					</a>
+				</figure>
+				<figure>
+					<div class="mobile-gallery-image">
+						<video src="./Assets/arch.mp4" autoplay muted loop playsinline></video>
+					</div>
+					<figcaption>Architectural Visualization</figcaption>
+				</figure>
+				<figure>
+					<a href="https://www.refractstudio.net/mwportals" target="_blank" rel="noopener noreferrer">
+						<div class="mobile-gallery-image">
+							<video src="./Assets/Portals.mp4" autoplay muted loop playsinline></video>
+						</div>
+						<figcaption>Portals, Webby Nominated Meow Wolf Collaboration</figcaption>
+					</a>
+				</figure>
+				<figure>
+					<div class="mobile-gallery-image">
+						<video src="./Assets/ueenv.mp4" autoplay muted loop playsinline></video>
+					</div>
+					<figcaption>Unreal Engine Environment, VR Ready</figcaption>
+				</figure>
+				<figure>
+					<a href="https://www.refractstudio.net/mwvegas" target="_blank" rel="noopener noreferrer">
+					<div class="mobile-gallery-image">
+						<video src="./Assets/Dancer.mp4" autoplay muted loop playsinline></video>
+					</div>
+					<figcaption>Dancer, Route 66 collaboration</figcaption>
+					</a>
+				</figure>
+				<figure>
+					<div class="mobile-gallery-image">
+						<video src="./Assets/jetpack.mp4" autoplay muted loop playsinline></video>
+					</div>
+					<figcaption>Jet Pack, Houdini Simulation</figcaption>
+				</figure>
+				<figure>
+					<div class="mobile-gallery-image">
+						<video src="./Assets/bloodclot.mp4" autoplay muted loop playsinline></video>
+					</div>
+					<figcaption>Medical Animation</figcaption>
+				</figure>
+				<figure>
+					<a href="https://avap-cmd.github.io/RefractProteinWebApp/" target="_blank" rel="noopener noreferrer">
+					<div class="mobile-gallery-image">
+						<video src="./Assets/Protien Vis.mp4" autoplay muted loop playsinline></video>
+					</div>
+					<figcaption>Protein Visualization</figcaption>
+					</a>
+				</figure>
+			</div>
+		</div>
 	</div>
 
 	<div class="app-spacer">

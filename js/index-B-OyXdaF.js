@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./renderer-C4m7c0Yg.js","./pointer-BzmVL6Na.js","./raf-CartBcHU.js","./StatsGLNode-CPQSzk2b.js","./site-CNL-V1ix.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./renderer-bA-6Wq8L.js","./pointer-B18PwaZq.js","./raf-jhQj1DnW.js","./StatsGLNode--fcXipdm.js","./site-CLsNM3qz.js"])))=>i.map(i=>d[i]);
 true              &&(function polyfill() {
 	const relList = document.createElement("link").relList;
 	if (relList && relList.supports && relList.supports("modulepreload")) return;
@@ -133428,7 +133428,7 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 		if ( offscreen && 'transferControlToOffscreen' in canvas ) {
 
 			const worker = new Worker(
-				new URL(/* @vite-ignore */ ""+new URL('offscreen-Dqj3Ro07.js', import.meta.url).href+"", import.meta.url),
+				new URL(/* @vite-ignore */ ""+new URL('offscreen-P-NDyM7z.js', import.meta.url).href+"", import.meta.url),
 				{
 					type: 'module',
 				}
@@ -133543,8 +133543,8 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 
 				try {
 
-					const { default: Renderer } = await __vitePreload(async () => { const { default: Renderer } = await import( './renderer-C4m7c0Yg.js' );return { default: Renderer }},true              ?__vite__mapDeps([0,1,2,3]):void 0,import.meta.url);
-					const { default: Site } = await __vitePreload(async () => { const { default: Site } = await import( './site-CNL-V1ix.js' );return { default: Site }},true              ?__vite__mapDeps([4,1,2]):void 0,import.meta.url);
+					const { default: Renderer } = await __vitePreload(async () => { const { default: Renderer } = await import( './renderer-bA-6Wq8L.js' );return { default: Renderer }},true              ?__vite__mapDeps([0,1,2,3]):void 0,import.meta.url);
+					const { default: Site } = await __vitePreload(async () => { const { default: Site } = await import( './site-CLsNM3qz.js' );return { default: Site }},true              ?__vite__mapDeps([4,1,2]):void 0,import.meta.url);
 					const gl = new Renderer( {
 						canvas,
 						isWebGPU: Boolean( isWebGPU ),
@@ -133570,7 +133570,7 @@ function init( { record = false, debug = false, offscreen = false } = {} ) {
 						store.stats = stats;
 
 						// Initialize texture captures for StatsGLNode
-						const { initStatsCaptures } = await __vitePreload(async () => { const { initStatsCaptures } = await import( './raf-CartBcHU.js' );return { initStatsCaptures }},true              ?[]:void 0,import.meta.url);
+						const { initStatsCaptures } = await __vitePreload(async () => { const { initStatsCaptures } = await import( './raf-jhQj1DnW.js' );return { initStatsCaptures }},true              ?[]:void 0,import.meta.url);
 						await initStatsCaptures();
 
 					}
@@ -138907,10 +138907,106 @@ async function initSecondScene(containerId = 'app2') {
 
 }
 
-init({
-			debug: false,
-			offscreen: false
-		});
+if ( isMobileOrTablet() ) {
+
+			document.body.classList.add( 'no-first-app' );
+			const gallery = document.querySelector( '.mobile-gallery' );
+			const track = gallery && gallery.querySelector( '.mobile-gallery-track' );
+			if ( gallery && track ) {
+
+				const slides = track.querySelectorAll( 'figure' );
+				const onGalleryScroll = () => {
+
+					const w = track.scrollWidth / 2;
+					if ( w > 0 && gallery.scrollLeft >= w ) {
+
+						gallery.scrollLeft -= w;
+
+					}
+
+					const slideW = gallery.clientWidth;
+					if ( slideW <= 0 ) return;
+
+					const pos = gallery.scrollLeft / slideW;
+					for ( let i = 0; i < slides.length; i ++ ) {
+
+						const d = Math.abs( pos - i );
+						const scale = 1 - 0.2 * Math.min( 1, d * 2 );
+						slides[ i ].style.transform = 'scale(' + scale + ')';
+
+					}
+
+				};
+				gallery.addEventListener( 'scroll', onGalleryScroll, { passive: true } );
+				onGalleryScroll();
+				gallery.querySelectorAll( 'video' ).forEach( ( video ) => {
+
+					video.muted = true;
+					video.play().catch( () => {} );
+
+				} );
+
+				gallery.addEventListener( 'gesturestart', ( e ) => e.preventDefault() );
+				gallery.addEventListener( 'gesturechange', ( e ) => e.preventDefault() );
+
+				slides.forEach( ( slide ) => {
+
+					const box = slide.querySelector( '.mobile-gallery-image' );
+					if ( ! box ) return;
+
+					let startDist = 0;
+					let startZoom = 1;
+					let zoom = 1;
+
+					box.addEventListener( 'touchstart', ( e ) => {
+
+						if ( e.touches.length !== 2 ) return;
+						startDist = Math.hypot(
+							e.touches[ 0 ].clientX - e.touches[ 1 ].clientX,
+							e.touches[ 0 ].clientY - e.touches[ 1 ].clientY
+						);
+						startZoom = zoom;
+
+					}, { passive: true } );
+
+					box.addEventListener( 'touchmove', ( e ) => {
+
+						if ( e.touches.length !== 2 || startDist <= 0 ) return;
+						e.preventDefault();
+						const dist = Math.hypot(
+							e.touches[ 0 ].clientX - e.touches[ 1 ].clientX,
+							e.touches[ 0 ].clientY - e.touches[ 1 ].clientY
+						);
+						zoom = Math.min( 4, Math.max( 1, startZoom * dist / startDist ) );
+						box.style.transform = 'scale(' + zoom + ')';
+
+					}, { passive: false } );
+
+					box.addEventListener( 'touchend', ( e ) => {
+
+						if ( e.touches.length >= 2 ) return;
+						startDist = 0;
+						if ( zoom <= 1.05 ) {
+
+							zoom = 1;
+							box.style.transform = '';
+
+						}
+
+					} );
+
+				} );
+
+			}
+
+		} else {
+
+			init( {
+				debug: false,
+				offscreen: false
+			} );
+
+		}
 
 		initSecondScene();
 
