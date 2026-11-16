@@ -24,19 +24,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          lfs: true # Downloads large files (like .mp4 and .ply) via Git LFS
+          lfs: true
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22 # Updated to Node 22 to fix EBADENGINE warnings
+          node-version: 22
           cache: 'npm'
 
-      - name: Authenticate to GitHub Packages
+      # 1. Configure AWS Credentials (this replaces the manual token)
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }} # e.g., ap-northeast-1
+
+      # 2. Log in to CodeArtifact so npm can access @three-blocks packages
+      - name: Log in to AWS CodeArtifact
         run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
-          echo "@three-blocks:registry=https://npm.pkg.github.com" >> .npmrc
-          echo "snowdev:registry=https://npm.pkg.github.com" >> .npmrc
+          aws codeartifact login --tool npm --domain three-blocks --domain-owner 196905988268 --repository pro --region ${{ secrets.AWS_REGION }}
 
       - name: Install dependencies
         run: npm ci
