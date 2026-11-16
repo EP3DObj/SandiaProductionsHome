@@ -24,13 +24,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          lfs: true # <--- THIS IS CRITICAL: Downloads the 254MB videos
+          lfs: true # Downloads large files (like .mp4 and .ply) via Git LFS
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22 # Updated to Node 22 to fix EBADENGINE warnings
           cache: 'npm'
+
+      - name: Authenticate to GitHub Packages
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
+          echo "@three-blocks:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "snowdev:registry=https://npm.pkg.github.com" >> .npmrc
 
       - name: Install dependencies
         run: npm ci
